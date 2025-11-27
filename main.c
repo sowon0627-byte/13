@@ -3,24 +3,31 @@
 #include <string.h>
 #include <math.h>
 
-struct student{
-       int ID;
-       char name[10];
-       double grade;
+struct point{
+       int x;
+       int y;
 };
        
 
 int main(int argc, char *argv[])
 {
-    struct student won = {060627, "Sowon", 4.34};
+    struct point p1, p2;
+    int xdiff, ydiff;
+    double dist;
+     
+    printf("input p1 coordinate (x y): ");
+    scanf("%d %d", &p1.x, &p1.y);
     
-    won.ID = 27;
+    printf("input p2 coordinate (x y): ");
+    scanf("%d %d", &p2.x, &p2.y);
     
-    strcpy(won.name, "Nam");
+    //p1,p2간 거리를 계산 ( sqrt() 함수 활용)
+    xdiff = p1.x - p2.x;
+    ydiff = p1.y - p2.y;
+    dist = sqrt( xdiff*xdiff + ydiff*ydiff);
     
-    won.grade = 4.34;
+    printf("distance : %1f\n", dist);
     
-    printf("ID : %i\nname : %s\ngrade : %1f\n", won.ID, won.name, won.grade);
   
   system("PAUSE");	
   return 0;
